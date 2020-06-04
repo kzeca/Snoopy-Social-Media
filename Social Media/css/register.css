@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wave{
+    position: fixed;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+main img{
+    max-width: 200px;
+
+    padding: 20px 40px;
+
+
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%, -50%);
+}
+
+main .register {
+    max-width: 70%;
+
+    padding: 20px 40px;
+
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.658), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1{
+    text-align: center;
+    color: rgb(201, 23, 23);
+}
+
+.register h2{
+    font-size: 20px;
+    margin-top: 20px;
+    color: rgb(156, 23, 23);
+}
+
+.register input {
+    height: 35px;
+    width: 200px;
+
+    padding: 10px 10px 10px 15px;
+    margin-top: 10px;
+
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.register .button{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button button{
+    width: 80%;
+
+    padding: 10px;
+
+    border: none;
+    border-radius: 5px;
+
+    color: #ffffff;
+    background: linear-gradient(to right, rgb(156, 0, 3), rgb(185, 0, 0), rgb(156, 0, 3));
+
+}
+
+.button button:hover {
+    background-position: right;
+}
+
+.error {
+    font-size: 14px;
+    color: #ff0000;
+  }

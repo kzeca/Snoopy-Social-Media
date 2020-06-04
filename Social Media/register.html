@@ -1,0 +1,45 @@
+<!--
+    MADE BY KZECA
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snoopy</title>
+    <link rel="shortcut icon" href="./img/LogoSnoopy.png" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <img class="wave" src="./img/wave.png" alt="background">
+    <main>
+        <img src="./img/LogoSnoopy.png" alt="LogoSnoopy">
+        <div class="register">
+            <h1>Register</h1>
+            <form action="index.html" onsubmit="registerSubmit(event)">
+                <h2>Username</h2>
+                <div>
+                    <input type="text" id="loginField"/>
+                    <p id="errorUsername" class="error"></p>
+                </div>
+                <h2>Password</h2>
+                <div>
+                    <input type="password" id="passwordField"/>
+                    <p id="errorPassword" class="error"></p>
+                </div>
+
+                <div class="button">
+                    <button type="submit">
+                        LOGIN
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+</body>
+
+<script src="./js/register.js"></script>
+<link rel="stylesheet" href="./css/register.css">
+</html>

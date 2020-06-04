@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snoopy</title>
+    <link rel="shortcut icon" href="./img/LogoSnoopy.png" />
+    <script src="./js/home.js"></script>
+    <script>
+        var token = localStorage.getItem("token");
+        if (!token) location.href = "index.html";
+      </script>
+      <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+      <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+          <nav>
+            <div class="logo_icon">
+              <img src="./img/LogoSnoopy.png" alt="Logo" height="40" width="40" />
+            </div>
+  
+            <div class="dropdown">
+              <button class="dropbutton" id="userText"></button>
+              <div class="dropdown-content">
+                <a onclick="logoutAccount()">Logout</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <img class="wave" src="./img/wave.png" alt="background">
+      <main>
+        <section class="submitPost">
+          <div class="post">
+            <form onsubmit="postAny(event)">
+              <header>Make a post</header>
+              <div id="imageDiv" class="imgDiv"></div>
+              <main>
+                <i class="fas fa-user"></i>
+                <textarea
+                  placeholder="What about talk about some music?"
+                  name="post"
+                ></textarea>
+  
+                <label for="fileInput">
+                  <i class="fas fa-file-image"></i>
+                </label>
+  
+                <input type="file" name="file" id="fileInput" accept="image/*" />
+  
+                <button type="submit">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </main>
+            </form>
+          </div>
+        </section>
+  
+        <section class="posts" id="postSection"></section>
+      </main>
+
+</body>
+
+<script text="text/javascript">
+    var username = localStorage.getItem("token");
+    var userText = document.createTextNode(username);
+    var userField = document.getElementById("userText");
+
+    userField.appendChild(userText);
+  </script>
+
+  <script text="text/javascript">
+    var inputFile = document.getElementById("fileInput");
+    var imgDiv = document.getElementById("imageDiv");
+    var IMG = document.createElement("IMG");
+
+    var fileReader = new FileReader();
+
+    inputFile.addEventListener("change", (ev) => {
+      var img = ev.target.files[0];
+
+      fileReader.readAsDataURL(img);
+      fileReader.onloadend = () => {
+        IMG.setAttribute("src", fileReader.result);
+        imgDiv.appendChild(IMG);
+        setFile(fileReader.result);
+      };
+    });
+  </script>
+
+  <script text="text/javascript">
+    var array = getPostArray();
+    if (array.length > 0) {
+      array = array.split(",{");
+      array = array.reverse();
+
+      array.forEach((element) => {
+        if (element[0] !== "{") {
+          element = "{" + element;
+        }
+        let data = JSON.parse(element);
+
+        generatePost(data.user, data.message, data.img);
+      });
+    }
+  </script>
+
+
+<link rel="stylesheet" type="text/css" href="css/home.css">
+</html>
