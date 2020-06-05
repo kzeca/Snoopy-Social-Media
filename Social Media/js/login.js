@@ -16,7 +16,7 @@ function validate(ev){
             const pass = db.password;
 
             if(username === login && password === pass){
-                window.location.href = "../home.html";
+                window.location.href = "home.html";
                 localStorage.setItem("token", username);
                 return true;
             }else error = {code: "password", message: "That password is wrong :("}

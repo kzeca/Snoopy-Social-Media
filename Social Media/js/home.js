@@ -2,7 +2,7 @@ var file = null;
 
 function logoutAccount() {
   localStorage.removeItem("token");
-  window.location.href = "../index.html";
+  window.location.href = "index.html";
 }
 
 function postAny(ev) {

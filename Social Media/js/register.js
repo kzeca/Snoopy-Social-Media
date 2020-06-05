@@ -23,7 +23,7 @@ function registerSubmit(ev){
     };
 
     localStorage.setItem(username, JSON.stringify(data));
-    window.location.href = "../index.html";
+    window.location.href = "index.html";
 }
 
 const inError = (error) => {
